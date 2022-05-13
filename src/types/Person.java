@@ -1,5 +1,8 @@
 package types;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Person
 {
     protected String DNI;
@@ -24,8 +27,6 @@ public class Person
     public void setDNI(String DNI) {
 
         //validar DNI
-
-
         this.DNI = DNI;
     }
 
@@ -36,6 +37,16 @@ public class Person
     public void setMail(String mail) {
 
         //validar MAIL
+        String regex = "^(.+)@(.+)$";
+        Pattern pattern = Pattern.compile(regex);
+
+        Matcher matcher = pattern.matcher(mail);
+        if(!matcher.find()){
+            this.mail="";
+        }
+        else{
+            this.mail = mail;
+        }
 
 
         this.mail = mail;

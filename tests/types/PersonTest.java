@@ -4,6 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,7 +15,7 @@ class PersonTest {
 
     @BeforeEach
     void setUp() {
-        p = new Person();
+        p = new Person("11111111A", "raul@gmail.com");
     }
 
     @AfterEach
@@ -27,11 +28,6 @@ class PersonTest {
 
     @Test
     void setMail() {
-        String regex = "^(.+)@(.+)$";
-        Pattern pattern = Pattern.compile(regex);
 
-        if
-        p.setMail("asdasda");
-        assertEquals("", );
     }
 }
